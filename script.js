@@ -284,7 +284,7 @@ async function connectWallet() {
   walletState.checkingAccess = true;
   updateWalletUI();
 
-  showToast('loading', 'Verifying Token Ownership...', 'Checking your $Dreams collection', 0);
+  showToast('loading', 'Verifying Token Ownership...', 'Checking your $Dream token balance', 0);
 
   // normalize address (safe-guard)
   const normalized = (address || '').toLowerCase().trim();
@@ -304,7 +304,7 @@ async function connectWallet() {
       showToast('success', 'Access Granted to Dreamworld!', 'Welcome, fellow dreamer! You may now enter.', 5000);
     } else {
       walletState.hasAccess = false;
-      walletState.accessDeniedReason = 'You need to own at least 1 $Dreams to access the Dreamworld. Your wallet does not contain any qualifying tokens.';
+      walletState.accessDeniedReason = 'You need to own at least 1 $Dream to access the Dreamworld. Your wallet does not contain any qualifying tokens.';
       showToast('error', 'Access Denied', walletState.accessDeniedReason, 8000);
     }
 
